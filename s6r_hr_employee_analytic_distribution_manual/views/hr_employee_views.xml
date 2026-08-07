@@ -12,4 +12,18 @@
         </field>
     </record>
 
+    <record id="hr_employee_public_view_form_manual_distribution" model="ir.ui.view">
+        <field name="name">hr.employee.public.form.manual.distribution</field>
+        <field name="model">hr.employee.public</field>
+        <field name="inherit_id" ref="hr.hr_employee_public_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='public']//group[@name='location']" position="after">
+                <group name="analytic" string="Analytic Accounting"
+                       invisible="not manual_distribution_id">
+                    <field name="manual_distribution_id"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>

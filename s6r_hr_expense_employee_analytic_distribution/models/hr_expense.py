@@ -15,10 +15,13 @@ class HrExpense(models.Model):
         distribution from the ``manual_distribution_id`` configured on the
         employee. If no manual distribution is set on the employee, the
         analytic distribution is cleared.
+
+        The employee field is restricted to ``hr.group_hr_user``, so it is read
+        with ``sudo()`` to let regular users encode their own expenses.
         """
         for expense in self:
-            manual_distribution = expense.employee_id.manual_distribution_id
-            expense.manual_distribution_id = manual_distribution
+            manual_distribution = expense.employee_id.sudo().manual_distribution_id
+            expense.manual_distribution_id = manual_distribution.id
             expense.analytic_distribution = (
                 manual_distribution.analytic_distribution or False
             )
