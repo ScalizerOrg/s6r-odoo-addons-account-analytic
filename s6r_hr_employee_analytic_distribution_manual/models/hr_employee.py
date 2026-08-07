@@ -11,6 +11,7 @@ class HrEmployee(models.Model):
         comodel_name="account.analytic.distribution.manual",
         string="Manual Analytic Distribution",
         domain="['|', ('company_id', '=', company_id), ('company_id', '=', False)]",
+        groups="hr.group_hr_user",
         help="Manual analytic distribution applied by default on the employee's "
         "expenses.",
     )
