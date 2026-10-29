@@ -1,0 +1,40 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* s6r_stock_analytic_costs_skip_mto
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: s6r_stock_analytic_costs_skip_mto
+#: model:ir.model.fields,field_description:s6r_stock_analytic_costs_skip_mto.field_stock_picking_type__analytic_costs_skip_mto
+msgid "Skip MTO Moves"
+msgstr "Ignorer les mouvements MTO"
+
+#. module: s6r_stock_analytic_costs_skip_mto
+#: model:ir.model.fields,help:s6r_stock_analytic_costs_skip_mto.field_stock_picking_type__analytic_costs_skip_mto
+msgid ""
+"Do not generate analytic entries for the moves supplied on order (MTO) and "
+"for the purchase receipts feeding them: their analytic cost comes from the "
+"vendor bill."
+msgstr ""
+"Ne pas générer d'écritures analytiques pour les mouvements approvisionnés "
+"sur commande (MTO) ni pour les réceptions d'achat qui les alimentent : leur "
+"coût analytique provient de la facture fournisseur."
+
+#. module: s6r_stock_analytic_costs_skip_mto
+#: model:ir.model,name:s6r_stock_analytic_costs_skip_mto.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvement de stock"
+
+#. module: s6r_stock_analytic_costs_skip_mto
+#: model:ir.model,name:s6r_stock_analytic_costs_skip_mto.model_stock_picking_type
+msgid "Type of Operation"
+msgstr "Type d'opération"
