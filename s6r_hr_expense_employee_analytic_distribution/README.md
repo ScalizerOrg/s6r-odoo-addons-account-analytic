@@ -8,6 +8,10 @@ When an employee is selected on an expense, the analytic distribution is
 automatically filled from the **Manual Analytic Distribution** configured on
 that employee (see *Scalizer HR Employee Analytic Distribution Manual*).
 
+The employee's distribution takes priority over the standard automatic
+analytic distribution models (e.g. account prefix rules). If the employee has
+no manual distribution, the standard rules apply.
+
 ## Authors
 
 * Scalizer
