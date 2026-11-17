@@ -1,0 +1,64 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* s6r_project_mrp_stock_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-17 08:22+0000\n"
+"PO-Revision-Date: 2026-11-17 08:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: s6r_project_mrp_stock_account
+#: model:ir.module.module,description:base.module_s6r_project_mrp_stock_account
+msgid ""
+"\n"
+"Generate the analytic costs of the component pickings (multi-step\n"
+"manufacturing) on the project of the manufacturing order:\n"
+"- the picking feeding a manufacturing order gets the project of this order;\n"
+"- the analytic cost of its moves is booked as a cost (negative amount).\n"
+msgstr ""
+"\n"
+"Génère les coûts analytiques des transferts de prélèvement de composants\n"
+"(fabrication en plusieurs étapes) sur le projet de l'ordre de fabrication :\n"
+"- le transfert qui alimente un ordre de fabrication reçoit le projet de cet ordre ;\n"
+"- le coût analytique de ses mouvements est enregistré comme une charge (montant négatif).\n"
+
+#. module: s6r_project_mrp_stock_account
+#: model:ir.model,name:s6r_project_mrp_stock_account.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Compte analytique"
+
+#. module: s6r_project_mrp_stock_account
+#: model:ir.module.module,summary:base.module_s6r_project_mrp_stock_account
+msgid "Analytic costs on the component pickings of manufacturing orders"
+msgstr ""
+"Coûts analytiques sur les prélèvements de composants des ordres de fabrication"
+
+#. module: s6r_project_mrp_stock_account
+#: model:ir.model.fields,field_description:s6r_project_mrp_stock_account.field_account_analytic_account__display_name
+#: model:ir.model.fields,field_description:s6r_project_mrp_stock_account.field_stock_move__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: s6r_project_mrp_stock_account
+#: model:ir.model.fields,field_description:s6r_project_mrp_stock_account.field_account_analytic_account__id
+#: model:ir.model.fields,field_description:s6r_project_mrp_stock_account.field_stock_move__id
+msgid "ID"
+msgstr ""
+
+#. module: s6r_project_mrp_stock_account
+#: model:ir.module.module,shortdesc:base.module_s6r_project_mrp_stock_account
+msgid "Scalizer Project MRP Stock Account"
+msgstr "Scalizer Coûts analytiques projet fabrication stock"
+
+#. module: s6r_project_mrp_stock_account
+#: model:ir.model,name:s6r_project_mrp_stock_account.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvement de stock"
