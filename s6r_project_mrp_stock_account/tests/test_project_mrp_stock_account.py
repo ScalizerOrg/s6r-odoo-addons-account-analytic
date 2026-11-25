@@ -55,3 +55,22 @@ class TestProjectMrpStockAccount(TransactionCase):
         self.assertEqual(picking.state, "done")
         self.assertEqual(lines.mapped(self.account.plan_id._column_name()), self.account)
         self.assertAlmostEqual(sum(lines.mapped("amount")), -20)
+
+    def test_component_picking_analytic_distribution_of_production(self):
+        plan2 = self.env["account.analytic.plan"].create({"name": "Plan 2"})
+        account2 = self.env["account.analytic.account"].create({"name": "Account 2", "plan_id": plan2.id})
+        production = self.env["mrp.production"].create(
+            {
+                "product_id": self.finished.id,
+                "product_qty": 1,
+                "analytic_distribution": {str(self.account.id): 100, str(account2.id): 100},
+            }
+        )
+        production.action_confirm()
+        picking = production.picking_ids.filtered(lambda picking: picking.picking_type_id == self.warehouse.pbm_type_id)
+        picking.action_assign()
+        picking.move_ids.picked = True
+        picking.button_validate()
+        lines = picking.move_ids.analytic_account_line_ids
+        self.assertEqual(lines.mapped(self.account.plan_id._column_name()), self.account)
+        self.assertEqual(lines.mapped(plan2._column_name()), account2)

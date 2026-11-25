@@ -10,12 +10,13 @@
     "summary": "Analytic costs on the component pickings of manufacturing orders",
     "sequence": 0,
     "license": "LGPL-3",
-    "depends": ["project_mrp", "project_stock_account"],
+    "depends": ["mrp_stock_analytic", "project_mrp", "project_stock_account"],
     "complexity": "easy",
     "description": """
 Generate the analytic costs of the component pickings (multi-step
 manufacturing) on the project of the manufacturing order:
 - the picking feeding a manufacturing order gets the project of this order;
+- its analytic distribution (all plans) is the one of the manufacturing order;
 - the analytic cost of its moves is booked as a cost (negative amount).
     """,
     "qweb": [],
