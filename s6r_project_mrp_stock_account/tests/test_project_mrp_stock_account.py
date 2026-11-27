@@ -74,3 +74,13 @@ class TestProjectMrpStockAccount(TransactionCase):
         lines = picking.move_ids.analytic_account_line_ids
         self.assertEqual(lines.mapped(self.account.plan_id._column_name()), self.account)
         self.assertEqual(lines.mapped(plan2._column_name()), account2)
+
+    def test_component_picking_production_location_analytic_cost(self):
+        self.warehouse.pbm_loc_id.usage = "production"
+        picking = self._confirm_production(self.project)
+        picking.action_assign()
+        picking.move_ids.picked = True
+        picking.button_validate()
+        lines = picking.move_ids.analytic_account_line_ids
+        self.assertEqual(picking.state, "done")
+        self.assertAlmostEqual(sum(lines.mapped("amount")), -20)

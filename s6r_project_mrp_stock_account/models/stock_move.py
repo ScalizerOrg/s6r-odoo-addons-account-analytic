@@ -28,7 +28,7 @@ class StockMove(models.Model):
         """
         self.ensure_one()
         production = self.move_dest_ids.raw_material_production_id
-        if len(production) == 1 and not self._is_out():
+        if len(production) == 1:
             return production.analytic_distribution or {}
         return {}
 
